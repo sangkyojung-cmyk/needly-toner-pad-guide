@@ -1,0 +1,47 @@
+.proposal-cover {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  align-items: center;
+  gap: clamp(1.8rem, 6vw, 5.5rem);
+  padding-block: clamp(2rem, 5vw, 4.8rem);
+}
+.proposal-cover h1 { font-size: clamp(2.3rem, 4.4vw, 4.2rem); line-height: 1.22; }
+.proposal-lead { max-width: 36em; margin-top: 1.4rem; font-size: 1.14rem; color: var(--muted); }
+.terms { background: var(--deep); color: #fff; padding: clamp(1.45rem, 3vw, 2.25rem); }
+.terms h2 { font-size: 1rem; letter-spacing: 0; }
+.term-length { margin: .8rem 0 .28rem; font-size: 1.3rem; }
+.term-length strong { font-size: clamp(2rem, 3vw, 3rem); line-height: 1.2; letter-spacing: -.06em; }
+.terms dl { margin: 1.3rem 0 0; border-top: 1px solid #729491; padding-top: .65rem; }
+.terms dl div { display: flex; justify-content: space-between; gap: 1rem; padding-top: .25rem; }
+.terms dt { color: #d7e7e2; }
+.terms dd { margin: 0; text-align: right; font-weight: 600; }
+.months { padding: 0; margin: 1.5rem 0 0; list-style: none; }
+.months li { display: grid; grid-template-columns: minmax(4.5rem, 1fr) 6fr; gap: 1.5rem; padding: 1.4rem 0; border-bottom: 1px solid var(--rule); }
+.months li:last-child { border-bottom: 0; padding-bottom: 0; }
+.months p, .questions p, .body-copy { max-width: 50em; margin-top: .45rem; color: var(--muted); }
+.when { font-weight: 700; color: var(--deep); }
+.demo-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: .55rem 1.25rem; }
+.demo-title time { color: var(--deep); }
+.product-title { margin-top: 1.4rem; }
+details { margin: 1.2rem 0; background: #e5ece5; padding: .85rem 1rem; }
+summary { cursor: pointer; color: var(--deep); font-weight: 600; }
+.sample, .questions .question { font: 400 1.12rem/1.5 "Baskervville", Georgia, serif; word-break: normal; }
+.sample { margin-top: .85rem; max-width: 65ch; }
+.questions { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.2rem, 3vw, 3rem); margin-top: 1.8rem; }
+.questions .question { color: var(--ink); }
+.agreement { display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.2rem 2rem; padding-bottom: 4rem; }
+@media (max-width: 720px) {
+  .proposal-cover, .questions, .agreement { grid-template-columns: 1fr; }
+  .months li { grid-template-columns: 1fr; gap: .35rem; }
+  .nav { flex-wrap: wrap; gap: .3rem 1rem; padding-block: .7rem; }
+  .nav nav { gap: 1rem; }
+}
+@media print {
+  .top, .refs { display: none; }
+  :root, body { background: white; color: black; }
+  .shell { width: 100%; }
+  .proposal-cover, .section { padding-block: 1.1rem; }
+  .terms { background: white; color: black; border: 1px solid #aaa; }
+  .terms dt { color: #333; }
+  .terms, .months li, .questions, .agreement { break-inside: avoid; }
+}
